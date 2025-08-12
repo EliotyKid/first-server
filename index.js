@@ -18,7 +18,8 @@ const gameServer = new colyseus.Server({
   greet: false,
 })
 
-gameServer.listen(3000)
+const PORT = process.env.PORT || 3000;
+gameServer.listen(PORT)
 await matchMaker.onReady
 matchMaker.controller.exposedMethods = ["joinById", "join"]
 
